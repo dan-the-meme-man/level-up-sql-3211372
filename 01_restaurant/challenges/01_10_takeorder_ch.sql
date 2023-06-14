@@ -21,3 +21,8 @@ INSERT INTO Orders(
 
 INSERT INTO OrdersDishes(OrderID, DishID)
 VALUES (1001, 4), (1001, 7), (1001, 20);
+
+SELECT SUM(Dishes.Price)
+FROM Dishes
+JOIN OrdersDishes ON Dishes.DishID = OrdersDishes.DishID
+WHERE OrdersDishes.OrderID = 1001;
